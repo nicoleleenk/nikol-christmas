@@ -8,12 +8,12 @@
 .snowflake {
   position: fixed;
   top: -10px;
-  z-index: 9999;
-  user-select: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.8;
   pointer-events: none;
-  font-size: 1.2em;
-  animation-name: fall;
-  animation-timing-function: linear;
+  filter: blur(0.5px);
 }
 
 @keyframes fall {
@@ -787,8 +787,16 @@
     snowflake.style.left = Math.random() * 100 + "vw";
     snowflake.style.animationDuration = 5 + Math.random() * 5 + "s";
     snowflake.style.opacity = Math.random();
-    snowflake.style.color =
-      snowColors[Math.floor(Math.random() * snowColors.length)];
+   const pastelColors = [
+  "#ffd1dc", // pastel pink
+  "#d6f0ff", // pastel blue
+  "#e6d9ff", // pastel purple
+  "#fff1c1", // pastel yellow
+  "#d9fbe5"  // pastel green
+];
+
+flake.style.background =
+  pastelColors[Math.floor(Math.random() * pastelColors.length)];
 
     document.body.appendChild(snowflake);
 
