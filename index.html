@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <title>🎄 Secret Christmas Cards 🎄</title>
   <style>
-    /* ❄️ Snowflakes */
+/* ❄️ Pastel Snow ❄️ */
 .snowflake {
   position: fixed;
   top: -10px;
-  color: white;
-  font-size: 1.2em;
-  pointer-events: none;
+  z-index: 9999;
   user-select: none;
-  animation: fall linear infinite;
+  pointer-events: none;
+  font-size: 1.2em;
+  animation-name: fall;
+  animation-timing-function: linear;
 }
 
 @keyframes fall {
@@ -20,6 +21,7 @@
     transform: translateY(110vh);
   }
 }
+
 
     body {
       font-family: Arial, sans-serif;
@@ -774,21 +776,27 @@
     Love you lots bro &lt;3 hehe
   </p>
 </div>
-  <script>
-  const snowCount = 25;
+<script>
+  const snowColors = ["#ffffff", "#ffe4f0", "#e6f7ff", "#fff6d6"];
 
-  for (let i = 0; i < snowCount; i++) {
-    const snow = document.createElement("div");
-    snow.className = "snowflake";
-    snow.innerHTML = "❄";
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.className = "snowflake";
+    snowflake.textContent = "❄";
 
-    snow.style.left = Math.random() * 100 + "vw";
-    snow.style.animationDuration = (Math.random() * 5 + 5) + "s";
-    snow.style.opacity = Math.random();
-    snow.style.fontSize = (Math.random() * 10 + 10) + "px";
+    snowflake.style.left = Math.random() * 100 + "vw";
+    snowflake.style.animationDuration = 5 + Math.random() * 5 + "s";
+    snowflake.style.opacity = Math.random();
+    snowflake.style.color =
+      snowColors[Math.floor(Math.random() * snowColors.length)];
 
-    document.body.appendChild(snow);
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => snowflake.remove(), 10000);
   }
+
+  setInterval(createSnowflake, 300);
 </script>
+
 </body>
   </html>
