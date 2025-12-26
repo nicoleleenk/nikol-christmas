@@ -22,10 +22,17 @@
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(110vh);
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(var(--drift)) translateY(55vh);
+  }
+  100% {
+    transform: translateX(calc(var(--drift) * -1)) translateY(110vh);
   }
 }
+
 
     body {
       font-family: Arial, sans-serif;
@@ -782,29 +789,39 @@
     const snowColors = ["#ffffff", "#ffe4f0", "#e6f7ff", "#fff6d6", "#e8f8f1"];
 
     function createSnowflake() {
-      const snowflake = document.createElement("div");
-      snowflake.className = "snowflake";
-      snowflake.textContent = "❄";
-      const size = 18 + Math.random() * 33;  // 
-snowflake.style.fontSize = size + "px";
+  const snowflake = document.createElement("div");
+  snowflake.className = "snowflake";
+  snowflake.textContent = "❄";
 
-// Glow that scales a bit with size
-snowflake.style.textShadow = `
-  0 0 ${size * 0.2}px rgba(255,255,255,0.9),
-  0 0 ${size * 0.45}px rgba(255,255,255,0.65),
-  0 0 ${size * 0.75}px rgba(255,255,255,0.45)
-`;
+  // position
+  snowflake.style.left = Math.random() * 100 + "vw";
 
-      snowflake.style.left = Math.random() * 100 + "vw";
-      snowflake.style.animationDuration = (6 + Math.random() * 6) + "s";
-      snowflake.style.opacity = (0.6 + Math.random() * 0.4);
-      snowflake.style.color = snowColors[Math.floor(Math.random() * snowColors.length)];
+  // ✅ THIS IS WHERE IT GOES
+  snowflake.style.animationDuration = 8 + Math.random() * 8 + "s";
 
-      document.body.appendChild(snowflake);
-      setTimeout(() => snowflake.remove(), 12000);
-    }
+  // opacity
+  snowflake.style.opacity = 0.6 + Math.random() * 0.4;
 
-    setInterval(createSnowflake, 300);
+  // pastel colour
+  snowflake.style.color =
+    snowColors[Math.floor(Math.random() * snowColors.length)];
+
+  // (optional) size + glow if you already added it
+  const size = 18 + Math.random() * 26;
+  snowflake.style.fontSize = size + "px";
+
+  snowflake.style.textShadow = `
+    0 0 ${size * 0.2}px rgba(255,255,255,0.9),
+    0 0 ${size * 0.45}px rgba(255,255,255,0.65),
+    0 0 ${size * 0.75}px rgba(255,255,255,0.45)
+  `;
+
+  document.body.appendChild(snowflake);
+
+  setTimeout(() => {
+    snowflake.remove();
+  }, 16000);
+}
   </script>
 
 </body>
