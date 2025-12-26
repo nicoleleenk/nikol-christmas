@@ -4,6 +4,29 @@
   <meta charset="UTF-8">
   <title>🎄 Secret Christmas Cards 🎄</title>
   <style>
+      /* Snowflake container */
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* so you can still click buttons */
+  z-index: 9999;
+}
+
+/* Snowflake style */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: #fff;
+  font-size: 1em;
+  user-select: none;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.8;
+}
+
     body {
       font-family: Arial, sans-serif;
       text-align: center;
@@ -21,20 +44,94 @@
       cursor: pointer;
     }
     .card {
-      display: none;
-      margin-top: 30px;
-      padding: 20px;
-      border-radius: 12px;
-      background: #ffffff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff8fc;
+    border: 2px solid #ff99cc;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px;
+    max-width: 600px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s, transform 0.5s;
+    display: none;
     }
+      .card.show {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+  }
+
+  .sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 8px gold;
+    animation: twinkle 1s infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+
+  @media (max-width: 650px) {
+    .card {
+      margin: 15px;
+      padding: 15px;
+    }
+    input, button {
+      font-size: 14px;
+      padding: 8px;
     .error {
       color: crimson;
       margin-top: 12px;
     }
   </style>
 </head>
+  <script>
+const snowContainer = document.getElementById('snow');
+const snowflakesCount = 50; // number of snowflakes
+
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.innerHTML = '❄'; // you can also use ✨ or 🎄 for variety
+
+  snowflake.style.left = Math.random() * window.innerWidth + 'px';
+  snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
+  snowflake.style.opacity = Math.random();
+
+  snowContainer.appendChild(snowflake);
+
+  // animate falling
+  const fallDuration = Math.random() * 5 + 5; // seconds
+  snowflake.style.transition = `transform ${fallDuration}s linear, opacity ${fallDuration}s linear`;
+  setTimeout(() => {
+    snowflake.style.transform = `translateY(${window.innerHeight + 50}px) rotate(${Math.random() * 360}deg)`;
+    snowflake.style.opacity = 0;
+  }, 100);
+
+  // remove snowflake after animation
+  setTimeout(() => {
+    snowflake.remove();
+    createSnowflake(); // recycle snowflake
+  }, fallDuration * 1000);
+}
+
+// start snow
+for (let i = 0; i < snowflakesCount; i++) {
+  createSnowflake();
+}
+</script>
+
 <body>
+  <div id="snow"></div>
+
 
 <h1>🎄 A Secret Christmas Card 🎄</h1>
 <p>Enter your special password</p>
@@ -89,6 +186,22 @@
       document.getElementById("error").textContent =
         "Hmm… that password doesn’t match 🎅";
     }
+  }
+    if (cardId) {
+    const card = document.getElementById(cardId);
+    card.classList.add('show');
+
+    // Add sparkles
+    for (let i = 0; i < 15; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = Math.random() * card.offsetWidth + 'px';
+      sparkle.style.top = Math.random() * card.offsetHeight + 'px';
+      card.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 1500);
+    }
+  } else {
+    alert("Incorrect password! Try again 🎅");
   }
 </script>
 
