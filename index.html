@@ -102,9 +102,9 @@
     "tr1c14_chu4": "card-tricia",
     "v1v14n_k0h": "card-vivian",
     "yn3z_chu4": "card-ynez",
-    "s0h_yu_q1ng": "card-yuqing"
+    "s0h_yu_q1ng": "card-yuqing",
     "m1ng_f331": "card-mingfeei",
-    "j4n3t_th4ng": "card-janet",
+    "j4n3t_th4ng": "card-janet"
 
   };
 
@@ -853,43 +853,47 @@
   </p>
 </div>
 <script>
-    const snowColors = ["#ffffff", "#ffe4f0", "#e6f7ff", "#fff6d6", "#e8f8f1"];
+  const snowColors = ["#ffffff", "#ffe4f0", "#e6f7ff", "#fff6d6", "#e8f8f1"];
 
-    function createSnowflake() {
-  const snowflake = document.createElement("div");
-  snowflake.className = "snowflake";
-  snowflake.textContent = "❄";
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.className = "snowflake";
+    snowflake.textContent = "❄";
 
-  // position
-  snowflake.style.left = Math.random() * 100 + "vw";
+    // position
+    snowflake.style.left = Math.random() * 100 + "vw";
 
-  // ✅ THIS IS WHERE IT GOES
-  snowflake.style.animationDuration = 8 + Math.random() * 8 + "s";
+    // duration (drift looks nicer when it's slower)
+    snowflake.style.animationDuration = 8 + Math.random() * 8 + "s";
 
-  // opacity
-  snowflake.style.opacity = 0.6 + Math.random() * 0.4;
+    // opacity + pastel colour
+    snowflake.style.opacity = 0.6 + Math.random() * 0.4;
+    snowflake.style.color = snowColors[Math.floor(Math.random() * snowColors.length)];
 
-  // pastel colour
-  snowflake.style.color =
-    snowColors[Math.floor(Math.random() * snowColors.length)];
+    // size
+    const size = 18 + Math.random() * 26;
+    snowflake.style.fontSize = size + "px";
 
-  // (optional) size + glow if you already added it
-  const size = 18 + Math.random() * 26;
-  snowflake.style.fontSize = size + "px";
+    // side-to-side drift (matches your CSS var(--drift))
+    const drift = (Math.random() * 80 - 40).toFixed(1) + "px"; // -40px to +40px
+    snowflake.style.setProperty("--drift", drift);
 
-  snowflake.style.textShadow = `
-    0 0 ${size * 0.2}px rgba(255,255,255,0.9),
-    0 0 ${size * 0.45}px rgba(255,255,255,0.65),
-    0 0 ${size * 0.75}px rgba(255,255,255,0.45)
-  `;
+    // glow (stronger with bigger flakes)
+    snowflake.style.textShadow = `
+      0 0 ${size * 0.2}px rgba(255,255,255,0.9),
+      0 0 ${size * 0.45}px rgba(255,255,255,0.65),
+      0 0 ${size * 0.75}px rgba(255,255,255,0.45)
+    `;
 
-  document.body.appendChild(snowflake);
+    document.body.appendChild(snowflake);
 
-  setTimeout(() => {
-    snowflake.remove();
-  }, 16000);
-}
-  </script>
+    setTimeout(() => snowflake.remove(), 16000);
+  }
+
+  // ✅ start the snow
+  setInterval(createSnowflake, 250);
+</script>
+
 
 </body>
 </html>
