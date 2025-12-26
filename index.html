@@ -94,8 +94,8 @@
     "n4n": "card-nan",
     "nic0ll3_y0ng": "card-nicolle",
     "priscilla_s33": "card-priscilla",
-    "r4ch3l_k0h": "card-rachel-k",
-    "r4ch3l_s1m": "card-rachel-s",
+    "r4ch3l_k0h": "card-rachelk",
+    "r4ch3l_s1m": "card-rachels",
     "s4r4h_th0m4s": "card-sarah",
     "sh3rm41n3_n3w": "card-shermaine",
     "t4ny4_chu4": "card-tanya",
@@ -109,6 +109,7 @@
 
   function unlock() {
     const input = document.getElementById("pw").value.trim().toLowerCase();
+
     document.querySelectorAll(".card").forEach(c => c.style.display = "none");
 
     if (cards[input]) {
@@ -119,6 +120,7 @@
     }
   }
 </script>
+
 
   
 <!-- CARDS -->
@@ -857,22 +859,25 @@
     snowflake.className = "snowflake";
     snowflake.textContent = "❄";
 
+    // position
     snowflake.style.left = Math.random() * 100 + "vw";
-    snowflake.style.animationDuration = 8 + Math.random() * 8 + "s";
-    snowflake.style.opacity = 0.6 + Math.random() * 0.4;
-
-    // pastel color
-    snowflake.style.color = snowColors[Math.floor(Math.random() * snowColors.length)];
-
-    // size
-    const size = 18 + Math.random() * 26;
-    snowflake.style.fontSize = size + "px";
 
     // drift (for your CSS var(--drift))
-    const drift = (Math.random() * 60 - 30) + "px"; // -30px to +30px
+    const drift = (Math.random() * 80 - 40).toFixed(0) + "px";
     snowflake.style.setProperty("--drift", drift);
 
-    // glow (optional override)
+    // speed
+    snowflake.style.animationDuration = (8 + Math.random() * 8) + "s";
+
+    // opacity
+    snowflake.style.opacity = (0.6 + Math.random() * 0.4).toFixed(2);
+
+    // pastel colour
+    snowflake.style.color = snowColors[Math.floor(Math.random() * snowColors.length)];
+
+    // size + glow
+    const size = 18 + Math.random() * 26;
+    snowflake.style.fontSize = size + "px";
     snowflake.style.textShadow = `
       0 0 ${size * 0.2}px rgba(255,255,255,0.9),
       0 0 ${size * 0.45}px rgba(255,255,255,0.65),
@@ -880,10 +885,12 @@
     `;
 
     document.body.appendChild(snowflake);
+
     setTimeout(() => snowflake.remove(), 16000);
   }
 
-  setInterval(createSnowflake, 300);
+  // ✅ start snow
+  setInterval(createSnowflake, 250);
 </script>
 
 
