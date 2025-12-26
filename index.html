@@ -8,13 +8,12 @@
 .snowflake {
   position: fixed;
   top: -10px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  opacity: 0.8;
+  font-size: 20px;
   pointer-events: none;
-  filter: blur(0.5px);
-  box-shadow: 0 0 6px rgba(255, 200, 220, 0.8);
+  user-select: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  z-index: 9999;
 }
 
 @keyframes fall {
@@ -778,7 +777,7 @@
   </p>
 </div>
 <script>
-  const snowColors = ["#ffd1dc", "#d6f0ff", "#e6d9ff", "#fff1c1", "#d9fbe5"];
+  const snowColors = ["#ffffff", "#ffe4f0", "#e6f7ff", "#fff6d6"];
 
   function createSnowflake() {
     const snowflake = document.createElement("div");
@@ -788,8 +787,8 @@
     snowflake.style.left = Math.random() * 100 + "vw";
     snowflake.style.animationDuration = 5 + Math.random() * 5 + "s";
     snowflake.style.opacity = Math.random();
-
-  pastelColors[Math.floor(Math.random() * pastelColors.length)];
+    snowflake.style.color =
+      snowColors[Math.floor(Math.random() * snowColors.length)];
 
     document.body.appendChild(snowflake);
 
