@@ -79,54 +79,59 @@
     50% { opacity: 1; transform: scale(1.5); }
   }
 
-  @media (max-width: 650px) {
-    .card {
-      margin: 15px;
-      padding: 15px;
-    }
-    input, button {
-      font-size: 14px;
-      padding: 8px;
-    .error {
-      color: crimson;
-      margin-top: 12px;
-    }
+@media (max-width: 650px) {
+  .card {
+    margin: 15px;
+    padding: 15px;
+  }
+  input, button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+.error {
+  color: crimson;
+  margin-top: 12px;
+}
+
   </style>
 </head>
-  <script>
-const snowContainer = document.getElementById('snow');
-const snowflakesCount = 50; // number of snowflakes
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const snowContainer = document.getElementById('snow');
+  const snowflakesCount = 50;
 
-function createSnowflake() {
-  const snowflake = document.createElement('div');
-  snowflake.classList.add('snowflake');
-  snowflake.innerHTML = '❄'; // you can also use ✨ or 🎄 for variety
+  function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.className = 'snowflake';
+    snowflake.innerHTML = '❄';
 
-  snowflake.style.left = Math.random() * window.innerWidth + 'px';
-  snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
-  snowflake.style.opacity = Math.random();
+    snowflake.style.left = Math.random() * window.innerWidth + 'px';
+    snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    snowflake.style.opacity = Math.random();
 
-  snowContainer.appendChild(snowflake);
+    snowContainer.appendChild(snowflake);
 
-  // animate falling
-  const fallDuration = Math.random() * 5 + 5; // seconds
-  snowflake.style.transition = `transform ${fallDuration}s linear, opacity ${fallDuration}s linear`;
-  setTimeout(() => {
-    snowflake.style.transform = `translateY(${window.innerHeight + 50}px) rotate(${Math.random() * 360}deg)`;
-    snowflake.style.opacity = 0;
-  }, 100);
+    const fallDuration = Math.random() * 5 + 5;
+    snowflake.style.transition = `transform ${fallDuration}s linear, opacity ${fallDuration}s linear`;
 
-  // remove snowflake after animation
-  setTimeout(() => {
-    snowflake.remove();
-    createSnowflake(); // recycle snowflake
-  }, fallDuration * 1000);
-}
+    requestAnimationFrame(() => {
+      snowflake.style.transform =
+        `translateY(${window.innerHeight + 50}px) rotate(${Math.random() * 360}deg)`;
+      snowflake.style.opacity = 0;
+    });
 
-// start snow
-for (let i = 0; i < snowflakesCount; i++) {
-  createSnowflake();
-}
+    setTimeout(() => {
+      snowflake.remove();
+      createSnowflake();
+    }, fallDuration * 1000);
+  }
+
+  for (let i = 0; i < snowflakesCount; i++) {
+    createSnowflake();
+  }
+});
 </script>
 
 <body>
@@ -173,36 +178,34 @@ for (let i = 0; i < snowflakesCount; i++) {
   };
 
   function unlock() {
-    const input = document.getElementById("pw").value.trim().toLowerCase();
+  const input = document.getElementById("pw").value.trim().toLowerCase();
 
-    document.querySelectorAll(".card").forEach(card => {
-      card.style.display = "none";
-    });
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display = "none";
+    card.classList.remove("show");
+  });
 
-    if (cards[input]) {
-      document.getElementById(cards[input]).style.display = "block";
-      document.getElementById("error").textContent = "";
-    } else {
-      document.getElementById("error").textContent =
-        "Hmm… that password doesn’t match 🎅";
-    }
-  }
-    if (cardId) {
-    const card = document.getElementById(cardId);
-    card.classList.add('show');
+  if (cards[input]) {
+    const card = document.getElementById(cards[input]);
+    card.style.display = "block";
+    card.classList.add("show");
+    document.getElementById("error").textContent = "";
 
-    // Add sparkles
+    // sparkles
     for (let i = 0; i < 15; i++) {
       const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
+      sparkle.className = 'sparkle';
       sparkle.style.left = Math.random() * card.offsetWidth + 'px';
       sparkle.style.top = Math.random() * card.offsetHeight + 'px';
       card.appendChild(sparkle);
       setTimeout(() => sparkle.remove(), 1500);
     }
   } else {
-    alert("Incorrect password! Try again 🎅");
+    document.getElementById("error").textContent =
+      "Hmm… that password doesn’t match 🎅";
   }
+}
+
 </script>
 
 <!-- CARDS -->
