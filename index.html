@@ -52,23 +52,6 @@
 
   </style>
 </head>
-<script>
-  const snowCount = 25;
-
-  for (let i = 0; i < snowCount; i++) {
-    const snow = document.createElement("div");
-    snow.className = "snowflake";
-    snow.innerHTML = "❄";
-
-    snow.style.left = Math.random() * 100 + "vw";
-    snow.style.animationDuration = (Math.random() * 5 + 5) + "s";
-    snow.style.opacity = Math.random();
-    snow.style.fontSize = (Math.random() * 10 + 10) + "px";
-
-    document.body.appendChild(snow);
-  }
-</script>
-
 <body>
 
 <h1>🎄 A Secret Christmas Card 🎄</h1>
@@ -791,5 +774,21 @@
     Love you lots bro &lt;3 hehe
   </p>
 </div>
+  <script>
+  const snowCount = 25;
+
+  for (let i = 0; i < snowCount; i++) {
+    const snow = document.createElement("div");
+    snow.className = "snowflake";
+    snow.innerHTML = "❄";
+
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    snow.style.opacity = Math.random();
+    snow.style.fontSize = (Math.random() * 10 + 10) + "px";
+
+    document.body.appendChild(snow);
+  }
+</script>
 </body>
   </html>
