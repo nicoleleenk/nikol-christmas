@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎄 Secret Christmas Cards 🎄</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #fffaf2;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      margin-left: 6px;
+      cursor: pointer;
+    }
+    .card {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .error {
+      color: crimson;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎄 A Secret Christmas Card 🎄</h1>
+<p>Enter your special password</p>
+
+<input type="password" id="pw" placeholder="Your password">
+<button onclick="unlock()">Open</button>
+
+<p id="error" class="error"></p>
+
+
+<script>
+  const cards = {
+    "4thy_t4n": "card-athy",
+    "b3cky_y4p": "card-becky",
+    "c4rr1s4_l33": "card-carissa",
+    "ch4l3n3_kw4ng": "card-charlene",
+    "ch4rl0tt3_kw4ng": "card-charlotte",
+    "c1ndy_s0h": "card-cindy",
+    "cl30_4ng": "card-cleo",
+    "3sth3r_l1m": "card-esther",
+    "f10n4_chu1": "card-fiona",
+    "h1ll4ry_h3ng": "card-hillary",
+    "j03ll3_y0ng": "card-joelle",
+    "j0v1_t0h": "card-jovi",
+    "m13l4n_d14": "card-mielan",
+    "m1k0_s3ng": "card-miko",
+    "n4n": "card-nan",
+    "nic0ll3_y0ng": "card-nicolle",
+    "priscilla_s33": "card-priscilla",
+    "r4ch3l_k0h": "card-rachelk",
+    "r4ch3l_s1m": "card-rachels",
+    "s4r4h_th0m4s": "card-sarah",
+    "sh3rm41n3_n3w": "card-shermaine",
+    "t4ny4_chu4": "card-tanya",
+    "tr1c14_chu4": "card-tricia",
+    "v1v14n_k0h": "card-vivian",
+    "yn3z_chu4": "card-ynez",
+    "s0h_yu_q1ng": "card-yuqing"
+  };
+
+  function unlock() {
+    const input = document.getElementById("pw").value.trim().toLowerCase();
+
+    document.querySelectorAll(".card").forEach(card => {
+      card.style.display = "none";
+    });
+
+    if (cards[input]) {
+      document.getElementById(cards[input]).style.display = "block";
+      document.getElementById("error").textContent = "";
+    } else {
+      document.getElementById("error").textContent =
+        "Hmm… that password doesn’t match 🎅";
+    }
+  }
+</script>
+
+<!-- CARDS -->
+  <div id="card-athy" class="card">
+  <h2>🎄 Merry Christmas, Athy! 🎄</h2>
+  <p>
+    Merry Christmas and a Happy New Year to you, Athy! It has been a while since we have spoken in person,
+    but still wanted to write a letter to you! I hope that Okinawa has been good to you and as the year is
+    coming to a close, I wanna thank you for your presence and your love for others.
+  </p>
+  <p>
+    The way you put others first and choose to be part of them is admirable: something that we often lack
+    as a human race and as people who follow Christ. Thank you for choosing to meet people at their level
+    and going to win people in Okinawa! Honestly, it is such a hard place to win people, especially on an island.
+    So good job you.
+  </p>
+  <p>
+    Okay, enough of the blah blah, I really appreciate you as a friend! Thank you for being friends with me too.
+    See you in 2027! &lt;3
+  </p>
+</div>
+
+  <div id="card-becky" class="card">
+  <h2>🎄 Merry Christmas, Becky! 🎄</h2>
+  <p>
+    Merry Christmas and a Happy New Year to you Becky! I am glad that we have gotten closer this year!
+    Not going to lie, I never thought that this would happen LMAO, although I wouldn’t trade anything for
+    how it turned out.
+  </p>
+  <p>
+    I appreciate your gentle heart towards others and your constant care for the people around you —
+    in ways that only you as Becky Yap can give.
+  </p>
+  <p>
+    One of the memories that changed my perspective was the first time we roomed together on the cruise.
+    I had never been woken up so gently before LMAO, and it honestly changed the way I try to do things
+    more gently too.
+  </p>
+  <p>
+    Once again, Merry Christmas. I hope you enjoy the paint by numbers — please take a picture for me.
+    Love you lots as always, never change pls &lt;3
+  </p>
+</div>
+
+  <div id="card-carissa" class="card">
+  <h2>🎄 Merry Christmas, Carissa! 🎄</h2>
+  <p>
+    Merry Christmas and a Happy New Year to you Carissa! You are one of my fellow Christian nurse friends
+    and I am very appreciative of being in the same line as you.
+  </p>
+  <p>
+    As you are coming out of youth and I am heading to Japan, I believe this new season will be fruitful —
+    not a resting period, but a honing period. A time to prepare to pierce through.
+  </p>
+  <p>
+    Please don’t hesitate to talk to me, and I hope you enjoy the Switch while I’m gone!
+    Love you lots &lt;3
+  </p>
+</div>
+
+  <div id="card-charlene" class="card">
+  <h2>🎄 Merry Christmas, Charlene! 🎄</h2>
+  <p>
+    This might feel random, but I really wanted to express my gratitude for you this Christmas.
+    You radiate a calmness and comfort that makes people feel safe without trying.
+  </p>
+  <p>
+    I’m really thankful to be able to call you a friend — someone I can walk up to, hug,
+    and feel completely at ease with. Please never change 
+  </p>
+</div>
+
+<div id="card-charlotte" class="card">
+  <h2>🎄 Merry Christmas, Charlotte! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year Charlotte! To start off, I'd like to say that
+    I think that you are a very funny person — you crack me up in the best way possible
+    and that is very charming of you.
+  </p>
+
+  <p>
+    You are very quirky in your own way and it brings a certain comfort along with it.
+    It means that you are comfortable being yourself and you're not afraid of judgement
+    from the people that you are with, so thank you. You make me feel very comfortable,
+    that I don't need to be funny to be heard.
+  </p>
+
+  <p>
+    Anyway, enough of the sap! Merry Christmas, Charlotte, thank you for being friends
+    with me, I love you lots! &lt;3
+  </p>
+</div>
+
+  <div id="card-cindy" class="card">
+  <h2>🎄 Merry Christmas, Cindy! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year Cindy! I can't believe we're still friends!
+    Just kidding. I am honoured to be friends with you — someone I can crack jokes with
+    and know I wouldn't go too far.
+  </p>
+
+  <p>
+    Thank you for being a good friend, someone who doesn't question and will go out of
+    your way (as much as possible) to help someone in need.
+  </p>
+
+  <p>
+    When you talked about needing to go for surgery, I was honestly really scared.
+    But I prayed about it and remembered that God is not a cruel God. I believe with
+    all my heart that whatever happens will be part of His plan and for His glory.
+  </p>
+
+  <p>
+    I really don't want to lose you as a friend. Please remember that I don't see you
+    as a handicapped person, but simply as Cindy Soh.
+  </p>
+
+  <p>
+    I love you very much, even though I might not say it often — so if you ever need
+    to hear it, please come back to this message because I am not going to say it in
+    real life LOL &lt;3
+  </p>
+</div>
+
+  <div id="card-cleo" class="card">
+  <h2>🎄 Merry Christmas, Cleo! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year Cleo! Sometimes I can't fathom how we have only
+    been friends for a year plus because it feels like we have known each other for years.
+  </p>
+
+  <p>
+    Your genuine spirit for community and inviting everyone to gather, eat, and spend
+    time together brings me so much joy. I really respect that about you.
+  </p>
+
+  <p>
+    I hope our friendship never changes — that even through busy seasons, we will see
+    each other bear spiritual fruit and dwell in God's courts all the days of our lives.
+  </p>
+
+  <p>
+    I love you a lot, and there is nothing in this world I would trade that for. &lt;3
+  </p>
+</div>
+
+  <div id="card-esther" class="card">
+  <h2>🎄 Merry Christmas, Esther! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year Esther! Thank you for being such a great friend
+    and someone I can always find during Sunday service.
+  </p>
+
+  <p>
+    We keep talking about going out to eat — let's really do it before I go for missions
+    (which honestly means we need to do it soon LOL).
+  </p>
+
+  <p>
+    Love you lots, please always remember that. &lt;3
+  </p>
+</div>
+
+  <div id="card-fiona" class="card">
+  <h2>🎄 Merry Christmas, Fiona! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Fiona! I am really grateful to have drawn
+    closer to you — to have a low-maintenance friendship that can pause and resume so
+    naturally.
+  </p>
+
+  <p>
+    You inspire me a lot. Your patience and ability to teach without judgement is something
+    you should be very proud of. Even when there are slip-ups, your intentions are never evil.
+  </p>
+
+  <p>
+    Anyway, enough of the sap. I love you lots and I love your humour — please never change. &lt;3
+  </p>
+</div>
+
+  <div id="card-hillary" class="card">
+  <h2>🎄 Merry Christmas, Hillary! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Hillary! I can't believe that we have
+    been friends for 15 years (I think — I kinda lost count). I really have to thank God
+    for you and our friendship. You have seen me from when I was a literal hooligan to
+    who I am now, and you played a huge part in that.
+  </p>
+
+  <p>
+    I don't think I've ever told you this before, but when you first said you wanted to
+    stop cursing in secondary school, it really made me think about what it meant to be
+    a real Christian — to be Christ-like and different from the world.
+  </p>
+
+  <p>
+    I admire your courage and your willingness to take the first step to initiate change,
+    to say things many people think about but are too afraid to act on. Sometimes when I
+    need courage, I ask myself, “How would Hillary do this?”
+  </p>
+
+  <p>
+    You're a role model not just to me, but to many around you. Please never doubt that.
+    Anyway, I love you very much — you're my favourite social worker &lt;3
+  </p>
+</div>
+
+  <div id="card-joelle" class="card">
+  <h2>🎄 Merry Christmas, Joelle! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Joelle! I still can't believe you're back
+    from Fukuoka LOL — just kidding.
+  </p>
+
+  <p>
+    This year, I really want to thank you for your constant care for me and for the people
+    around you. Yes, it might be your role in church, but it takes a special heart to do
+    it with such sincerity and purpose.
+  </p>
+
+  <p>
+    Your wisdom and steadiness in your faith and foundation on the Word are truly admirable.
+    Sometimes I think, “Oh, that’s true — why didn’t I think of that?”
+  </p>
+
+  <p>
+    Thank you for being Nan and I’s ML buddy and basically hard-carrying our team.
+    Maybe that’s why this is my first time hitting Epic LOL.
+    Love you lots, Joelle &lt;3
+  </p>
+</div>
+
+  <div id="card-jovi" class="card">
+  <h2>🎄 Merry Christmas, Jovi! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Jovi (and Andrew hehe).
+    I’m really appreciative of you — your genuine love for people, your care for others,
+    and you and Andrew’s desire to host and provide comfort.
+  </p>
+
+  <p>
+    I can never thank you enough for the hospitality you both show me.
+    Sometimes I wonder if I deserve it, especially since I literally bring nothing
+    to the table — literally and figuratively.
+  </p>
+
+  <p>
+    Please kindly wait for me to come back from missions and earn some money,
+    because I really want to bring you both out for a meal.
+  </p>
+
+  <p>
+    Please never change who you are. Let’s meet before I go for missions —
+    I’ll miss you and Andrew a lot.
+    Merry Christmas and love you lots &lt;3
+  </p>
+</div>
+
+  <div id="card-mielan" class="card">
+  <h2>🎄 Merry Christmas, Mielan! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Mielan! I can't believe we’ve been friends
+    for about 8 years already. Sometimes I wonder what life would’ve been like if we had
+    never crossed paths — and I’m really glad I never had to find out.
+  </p>
+
+  <p>
+    I do miss you quite a bit. It sucks that when we don’t see each other often,
+    we naturally drift apart. Sometimes I struggle to understand that,
+    especially when love is meant to be the greatest of all.
+  </p>
+
+  <p>
+    I’m sorry if I haven’t shown you enough grace or love.
+    If I’ve hurt you or misunderstood you, please forgive me.
+  </p>
+
+  <p>
+    There’s a lot more I want to say, but I returned my vocabulary after turning 18.
+    Let’s please meet before you go to Canada.
+    Love you lots, Mielan &lt;3
+  </p>
+</div>
+
+  <div id="card-miko" class="card">
+  <h2>🎄 Merry Christmas, Miko! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Miko!
+    I think I write this in every letter I give you, but you truly are a miracle to me.
+  </p>
+
+  <p>
+    Thank you for your love for me and the people around you — for coming to others with
+    a genuine heart to bless, to make people feel comfortable and loved, and for wanting
+    to provide a safety net so others don’t go through the same things you did.
+  </p>
+
+  <p>
+    Thank you for your love for your CG, for meeting people where they are at, for being
+    a voice for your members, and for wanting the best for them.
+  </p>
+
+  <p>
+    My prayer for you is that none of this will be done in vain.
+    God sees you, knows how you feel, and He will never leave nor forsake you.
+    Trust in Him — He will turn all things for good.
+  </p>
+
+  <p>
+    Anyway, I love you lots, and there’s nothing I would trade for our friendship &lt;3
+  </p>
+</div>
+
+  <div id="card-nan" class="card">
+  <h2>🎄 Merry Christmas, Nan! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Nan!
+    It’s been 8 years since we’ve known each other — can you believe that?
+    Honestly, I can’t.
+  </p>
+
+  <p>
+    There are times I feel like I may have wronged or offended you,
+    and I want to say sorry for that.
+    I’m not always gentle with my words, so please accept my apology.
+  </p>
+
+  <p>
+    Thank you for being my best friend.
+    If you asked me 7 years ago whether we’d be here today,
+    I think I would’ve doubted it a lot.
+  </p>
+
+  <p>
+    I will really miss you when I go for missions.
+    There’s comfort in you.
+  </p>
+
+  <p>
+    Lastly, there is really Nan like you.
+    You are unapologetically firm in your faith, and that is admirable.
+    Sometimes I wish I had even 1% of your confidence.
+    I love you lots Nan &lt;3
+  </p>
+</div>
+
+ <div id="card-nicolle" class="card">
+  <h2>🎄 Merry Christmas, Nicolle! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Nicolle!
+    12 months have passed since last Christmas — so fast —
+    and you’re already almost back in Singapore after your time in Osaka.
+  </p>
+
+  <p>
+    Thank you for being a great friend.
+    Sometimes I feel like I don’t bring much to this friendship
+    and that it’s 90% you and 10% me — and I want to say sorry for that.
+  </p>
+
+  <p>
+    There are moments where I wonder if we’d be friends outside of church
+    because we’re very different people,
+    but somehow this friendship still works.
+  </p>
+
+  <p>
+    Speaking of the 90% — I really admire your wisdom and your ability to know
+    what to do in difficult situations.
+    Many people look up to you, and I’m definitely one of them.
+  </p>
+
+  <p>
+    Anyway — please continue being you.
+    Let’s meet before I go (that’s a whole other year LOL).
+    I love you lots, you are very cool &lt;3
+  </p>
+</div>
+
+  <div id="card-priscilla" class="card">
+  <h2>🎄 Merry Christmas, Priscilla! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Priscilla!
+    We’ve known each other for 10 years already, which is honestly quite crazy to think about.
+  </p>
+
+  <p>
+    One of my fond memories of us was when you first brought me to Fright Night in 2015.
+    I was so young, and I mostly remember myself running away because it was also the first
+    time we had really known each other.
+  </p>
+
+  <p>
+    I don’t think you remember it, but I find it really funny now.
+  </p>
+
+  <p>
+    I’m really glad that we’re still able to hang out and even go on overseas trips together.
+    Thank you for being my friend, and I believe that 2026 will be great for you.
+    Love you &lt;3
+  </p>
+</div>
+
+  <div id="card-rachel-k" class="card">
+  <h2>🎄 Merry Christmas, Rachel! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Rachel!
+  </p>
+
+  <p>
+    Thank you for being such a great friend.
+    You are someone who naturally bonds people together,
+    and I’m really thankful to have someone like you in our region.
+  </p>
+
+  <p>
+    It’s something our region really needs,
+    and it takes effort and genuine care to do what you do.
+    Remember to do it with God’s strength and not your own.
+  </p>
+
+  <p>
+    Love you lots, friend &lt;3
+    Merry Christmas hehe
+  </p>
+</div>
+
+  <div id="card-rachel-s" class="card">
+  <h2>🎄 Merry Christmas! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you!
+  </p>
+
+  <p>
+    I just realised that I’ve never written a letter to you before —
+    so Merry Christmas!
+  </p>
+
+  <p>
+    Thank you for a great year of being friends.
+    I’m not the best with words, but I’m really glad that I’m friends with you hehe.
+  </p>
+
+  <p>
+    Love you lots &lt;3
+  </p>
+</div>
+
+  <div id="card-sarah" class="card">
+  <h2>🎄 Merry Christmas, Sarah! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Sarah!
+  </p>
+
+  <p>
+    I really want to thank God for you.
+    I can’t believe we’re coming up on one year of friendship already —
+    time really flies.
+  </p>
+
+  <p>
+    Thank you for being someone I can let my guard down with,
+    where I can just sit and listen to you yap
+    instead of feeling like I need to lead a conversation.
+  </p>
+
+  <p>
+    I’m going to miss you when I go for missions,
+    so let’s meet before I leave!!
+    Love you lots hehe &lt;3
+  </p>
+</div>
+
+  <div id="card-shermaine" class="card">
+  <h2>🎄 Merry Christmas, Shermaine! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Shermaine!
+  </p>
+
+  <p>
+    It’s been about 5 years since we’ve known each other,
+    which is honestly pretty crazy to think about.
+    If I think about who you were 5 years ago versus now,
+    you’ve really grown so much.
+  </p>
+
+  <p>
+    Sometimes I wonder what would’ve happened if you had chosen not to come,
+    or not to be connected with VFC — we probably wouldn’t have had this friendship.
+  </p>
+
+  <p>
+    I really admire your courage to recklessly love (and I promise this isn’t an insult).
+    I still remember you inviting your entire class to hear the gospel.
+    I wish I had that kind of courage and understanding of God at that age.
+  </p>
+
+  <p>
+    I love you lots, please never doubt that.
+    There has never been a time where I didn’t,
+    even when I go NKJDSNJFDNSD &lt;333
+  </p>
+</div>
+
+  <div id="card-tanya" class="card">
+  <h2>🎄 Merry Christmas, Tanya! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Tanya!
+  </p>
+
+  <p>
+    Wow — we’ve known each other for almost 10 years,
+    which is honestly pretty crazy to say out loud.
+  </p>
+
+  <p>
+    I have to be honest: for the longest time,
+    I felt like we had a “business friendship”
+    because we mostly saw each other at church.
+    But this year, it really feels like we’ve grown closer,
+    and I’m very thankful for that.
+  </p>
+
+  <p>
+    Thank you for being unapologetically weird with me
+    (even though people think I’m weirder than you).
+    Thank you for your love for people and for reaching out to others
+    the same way Christ reached out to you.
+  </p>
+
+  <p>
+    Once again, Merry Christmas!
+    I love you very much, and I will give you a kiss
+    when we see each other again &lt;3
+  </p>
+</div>
+
+  <div id="card-tricia" class="card">
+  <h2>🎄 Merry Christmas, Tricia! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Tricia!
+  </p>
+
+  <p>
+    I realised that I’ve never written a Christmas letter to you before,
+    so here it is!
+  </p>
+
+  <p>
+    We’ve gotten closer over the past two years after I came out of YA,
+    and I’m really excited to continue doing life together with you.
+    Thank you for always answering my medical questions
+    and for being such a great friend.
+  </p>
+
+  <p>
+    Also — it’s good to know that your favourite animal is a gorilla,
+    and I don’t think I’ll ever forget that HAHA.
+  </p>
+
+  <p>
+    Love you lots! Merry Christmas!
+  </p>
+</div>
+
+  <div id="card-vivian" class="card">
+  <h2>🎄 Merry Christmas, Vivian! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Vivian!
+  </p>
+
+  <p>
+    We’ve gotten closer this year, and honestly,
+    I’m really very happy that we have.
+    This friendship feels long overdue because we really vibe so well.
+  </p>
+
+  <p>
+    Whenever we talk, you look at me like I truly matter to you,
+    and I really appreciate that.
+    I feel very loved just by the way you treat me,
+    and I hope I’m giving you even half of what you give me.
+  </p>
+
+  <p>
+    You are such a lovely person,
+    and I’m really very blessed to call you my friend.
+    Love you lots, and let’s meet before I go to Japan! &lt;3
+  </p>
+</div>
+
+  <div id="card-ynez" class="card">
+  <h2>🎄 Merry Christmas, Ynez! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Ynez!
+  </p>
+
+  <p>
+    It’s been about 10 years since we’ve known each other,
+    and that is honestly such a long time — WOW!
+    I can’t believe it’s already been that long,
+    and I’m really so grateful that we’re friends.
+  </p>
+
+  <p>
+    I’m always really happy to see a familiar face every Sunday service,
+    and to have someone to eat lunch with after.
+  </p>
+
+  <p>
+    Thank you for your love for me and for the people around you,
+    for caring for others the same way Christ does.
+    I always enjoy hugging you because it feels comforting and homely hehe.
+  </p>
+
+  <p>
+    Love you a lot Ynez — Merry Christmas!!! &lt;3
+  </p>
+</div>
+
+  <div id="card-yuqing" class="card">
+  <h2>🎄 Merry Christmas, Yu Qing! 🎄</h2>
+
+  <p>
+    Merry Christmas and a Happy New Year to you Yu Qing!
+  </p>
+
+  <p>
+    I remember the xmm you were so many years ago,
+    and sometimes I can’t believe that you’re who you are today
+    — in a really good way.
+  </p>
+
+  <p>
+    I don’t really have much to say other than that
+    I’m really proud of you for how far you’ve come.
+    The victories God has given you came from the faith you placed in Him,
+    and that is really endearing.
+  </p>
+
+  <p>
+    Love you lots bro &lt;3 hehe
+  </p>
+</div>
