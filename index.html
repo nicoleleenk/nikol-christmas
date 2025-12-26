@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <title>🎄 Secret Christmas Cards 🎄</title>
   <style>
-/* ❄️ Pastel Snow ❄️ */
 .snowflake {
   position: fixed;
   top: -10px;
-  font-size: 20px;
+  font-size: 18px;
   pointer-events: none;
   user-select: none;
   animation-name: fall;
   animation-timing-function: linear;
-  z-index: 9999;
 }
 
 @keyframes fall {
@@ -21,7 +19,6 @@
     transform: translateY(110vh);
   }
 }
-
 
     body {
       font-family: Arial, sans-serif;
@@ -777,7 +774,13 @@
   </p>
 </div>
 <script>
-  const snowColors = ["#ffffff", "#ffe4f0", "#e6f7ff", "#fff6d6"];
+  const snowColors = [
+    "#ffffff",   // white
+    "#ffe4f0",   // pastel pink
+    "#e6f7ff",   // pastel blue
+    "#fff6d6",   // pastel yellow
+    "#e8f8f1"    // pastel mint
+  ];
 
   function createSnowflake() {
     const snowflake = document.createElement("div");
@@ -785,14 +788,14 @@
     snowflake.textContent = "❄";
 
     snowflake.style.left = Math.random() * 100 + "vw";
-    snowflake.style.animationDuration = 5 + Math.random() * 5 + "s";
-    snowflake.style.opacity = Math.random();
+    snowflake.style.animationDuration = 6 + Math.random() * 6 + "s";
+    snowflake.style.opacity = 0.6 + Math.random() * 0.4;
     snowflake.style.color =
       snowColors[Math.floor(Math.random() * snowColors.length)];
 
     document.body.appendChild(snowflake);
 
-    setTimeout(() => snowflake.remove(), 10000);
+    setTimeout(() => snowflake.remove(), 12000);
   }
 
   setInterval(createSnowflake, 300);
